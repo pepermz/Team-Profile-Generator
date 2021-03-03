@@ -1,20 +1,7 @@
 const generateCards = teamData => {
- 
-    const manager = teamData.manager.map(function(job) {
-        let managerHtml = `
-        <div class="card" style="width: 800px ; margin-top: 20px; background-color: rgb(197, 197, 197); margin-left: 335px; text-align: center">
-            <h2>${job.name}</h2>
-            <h4>Manager<h4>
-            <p>ID: ${job.id}</p>
-            <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
-            <p>Office Number: ${job.office}</p>
-        </div>
-        `
-        return managerHtml
-    });
 
     const engineer = teamData.engineer.map(function(job) {
-        let engineerHtml = `
+        let engineerData = `
         <div class="card" style="width: 800px ; margin-top: 20px; background-color: rgb(197, 197, 197); margin-left: 335px; text-align: center">
             <h2>${job.name}</h2>
             <h4>Engineer<h4>
@@ -23,11 +10,24 @@ const generateCards = teamData => {
             <p> Github: <a href="https://github.com/${job.github}" target="_blank">${job.github}</a></p>
         </div>
         `
-        return engineerHtml
+        return engineerData
     })
 
+    const manager = teamData.manager.map(function(job) {
+        let managerData = `
+        <div class="card" style="width: 800px ; margin-top: 20px; background-color: rgb(197, 197, 197); margin-left: 335px; text-align: center">
+            <h2>${job.name}</h2>
+            <h4>Manager<h4>
+            <p>ID: ${job.id}</p>
+            <p>Email: <a href="mailto:${job.email}">${job.email}</a></p>
+            <p>Office Number: ${job.office}</p>
+        </div>
+        `
+        return managerData
+    });
+
     const intern = teamData.intern.map(function(job) {
-        let interHtml = `
+        let internData = `
         <div class="card" style="width: 800px ; margin-top: 20px; background-color: rgb(197, 197, 197); margin-left: 335px; text-align: center">
             <h2>${job.name}</h2>
             <h4>Intern<h4>
@@ -36,7 +36,7 @@ const generateCards = teamData => {
             <p> School: ${job.school}</p>
         </div>
         `
-        return interHtml
+        return internData
     })
     return [manager,engineer,intern]
 }

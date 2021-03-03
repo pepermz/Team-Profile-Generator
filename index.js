@@ -52,7 +52,6 @@ function Prompt() {
                     }])
                     .then(({office, anotherEntry}) => {
                         manager.push(new Manager(employee, id, email, office))
-                        // console.log(employeeArr)
                         if (anotherEntry) {
                             return Prompt();
                         }
@@ -72,7 +71,6 @@ function Prompt() {
                     }])
                     .then(({github, anotherEntry}) => {
                         engineer.push(new Engineer(employee, id, email, github))
-                        // console.log(employeeArr)
                         if (anotherEntry) {
                             return Prompt();
                         }
@@ -92,7 +90,6 @@ function Prompt() {
                     }])
                     .then(({school, anotherEntry}) => {
                         intern.push(new Intern(employee, id, email, school))
-                        // console.log(employeeArr)
                         if (anotherEntry) {
                             return Prompt();
                         }

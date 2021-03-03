@@ -9,8 +9,3 @@ test('creates a manager object',()=>{
     expect(manager.office).toBe('BC234');
 });
 
-test('employee role', ()=>{
-    const intern = new Intern ('James Smith', '289', 'jsmith@gmail.com', 'University of Texas at Austin');
-
-    expect(manager.getRole()).toEqual(expect.stringContaining(' Team Manager'));
-})
